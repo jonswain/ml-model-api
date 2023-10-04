@@ -14,6 +14,16 @@ with open("data/fps.pkl", "rb") as file:
 
 
 def mean_highest_tanimoto(smiles):
+    """Calculates a confidence value for a prediction
+    Confidence is calculated as the mean of the 5 highest tanimoto similarities
+    from the training set.
+
+    Args:
+        smiles (str): SMILES string for prediction
+
+    Returns:
+        float: Mean of the 5 highest tanimoto similarities in the training set
+    """
     mol = Chem.MolFromSmiles(smiles)
     fp = fpgen.GetFingerprint(mol)
     mean_similarity = (
@@ -24,7 +34,7 @@ def mean_highest_tanimoto(smiles):
 
 
 def process_predictions(results_df):
-    """Processes chemprop regression predictions
+    """Processes predictions, adds a confidence value for each prediction
     Confidence is calculated as the mean of the 5 highest tanimoto similarities
     from the training set.
 
