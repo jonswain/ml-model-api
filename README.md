@@ -7,7 +7,7 @@ A FastAPI endpoint for a machine learning model to predict LogS.
 The following commands will setup an environment where you can run and test the application locally:
 
 ```shell
-git clone UPDATE
+git clone git@github.com:jonswain/ml-model-api.git
 cd logs-model-api
 mamba env create -f envs/dev.yml
 conda activate LogS-model-API
