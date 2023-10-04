@@ -58,9 +58,7 @@ class Details(BaseModel):
     model_type: str | None = Field(None, example="chemprop")
     data_source: str | None = Field(None, example="internal")
     model_reference: str | None = Field(None, example="trained internally")
-    training_repo: str | None = Field(
-        None, example="UPDATE"
-    )
+    training_repo: str | None = Field(None, example="www.github.com")
     prediction_type: str | None = Field(None, example="regression")
     features: str | None = Field(None, example="RDKit2D")
     extra_information: str | None = Field(None, example="Extra information")
