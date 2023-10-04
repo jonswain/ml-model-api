@@ -38,7 +38,7 @@ class Prediction(BaseModel):
 
     smiles: str | None = Field(None, example="CC(=O)OC1=CC=CC=C1C(=O)O")
     prediction: float | None = Field(None, example=3.12)
-    uncertainty: float | None = Field(None, example=0.58)
+    confidence: float | None = Field(None, ge=0, le=1, example=0.58)
 
 
 class Predictions(BaseModel):
@@ -63,5 +63,4 @@ class Details(BaseModel):
     )
     prediction_type: str | None = Field(None, example="regression")
     features: str | None = Field(None, example="RDKit2D")
-    calibration_method: str | None = Field(None, example="None")
     extra_information: str | None = Field(None, example="Extra information")
